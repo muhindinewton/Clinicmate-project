@@ -19,7 +19,17 @@ logger.info("Database tables created successfully")
 
 def get_db():
     db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+    return db
+
+class DatabaseSession:
+    def __init__(self):
+        self.db = SessionLocal()
+
+    def __enter__(self):
+        return self.db
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.db.close()
+
+def get_db_context():
+    return DatabaseSession()
