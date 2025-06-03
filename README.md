@@ -15,7 +15,7 @@ ClinicMate is a modern command-line clinic management system built with Python. 
 - Search by date or patient
 
 ## Tech Stack
-- Python 3.x
+- Python 3.8
 - SQLAlchemy (ORM)
 - SQLite database
 - Modular and extensible architecture
